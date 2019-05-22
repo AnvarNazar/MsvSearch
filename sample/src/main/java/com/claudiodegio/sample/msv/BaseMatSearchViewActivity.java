@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -94,29 +95,31 @@ public abstract class BaseMatSearchViewActivity extends AppCompatActivity {
     }
     public class SimpleRVAdapter extends RecyclerView.Adapter<SimpleRVAdapter.SimpleViewHolder> {
         private List<String> dataSource;
-        public SimpleRVAdapter(List<String> dataArgs){
+
+        SimpleRVAdapter(List<String> dataArgs) {
             dataSource = dataArgs;
         }
 
+        @NonNull
         @Override
-        public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             // create a new view
             View view = LayoutInflater.from(BaseMatSearchViewActivity.this).inflate(android.R.layout.simple_list_item_1, parent, false);
-            SimpleViewHolder viewHolder = new SimpleViewHolder(view);
-            return viewHolder;
+            return new SimpleViewHolder(view);
         }
 
-        public  class SimpleViewHolder extends RecyclerView.ViewHolder{
-            public TextView textView;
-            public SimpleViewHolder(View itemView) {
+        @Override
+        public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
+            holder.textView.setText(dataSource.get(position));
+        }
+
+        class SimpleViewHolder extends RecyclerView.ViewHolder {
+            TextView textView;
+
+            SimpleViewHolder(View itemView) {
                 super(itemView);
                 textView = (TextView) itemView;
             }
-        }
-
-        @Override
-        public void onBindViewHolder(SimpleViewHolder holder, int position) {
-            holder.textView.setText(dataSource.get(position));
         }
 
         @Override
