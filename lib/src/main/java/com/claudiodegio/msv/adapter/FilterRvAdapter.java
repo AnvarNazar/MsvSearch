@@ -1,13 +1,13 @@
 package com.claudiodegio.msv.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.claudiodegio.msv.R;
 import com.claudiodegio.msv.model.Filter;
@@ -116,7 +116,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         TextView mTextView;
         public BaseViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(android.R.id.text1);
+            mTextView = itemView.findViewById(android.R.id.text1);
         }
 
         public void bind(Filter filter) {
@@ -129,7 +129,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         ImageView mIv;
         public IvViewHolder(View itemView) {
             super(itemView);
-            mIv = (ImageView) itemView.findViewById(R.id.iv_icon);
+            mIv = itemView.findViewById(R.id.iv_icon);
         }
 
         @Override
@@ -150,7 +150,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
 
         public CivViewHolder(View itemView) {
             super(itemView);
-            mCIV = (CircleImageView) itemView.findViewById(R.id.civ_icon);
+            mCIV = itemView.findViewById(R.id.civ_icon);
         }
 
         @Override
@@ -161,7 +161,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
             } else {
                 mCIV.setImageDrawable(filter.getIconDrawable());
             }
-            mCIV.setFillColor(filter.getIconBgColor());
+            mCIV.setColorFilter(filter.getIconBgColor());
         }
     }
 }

@@ -56,7 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="?android:attr/actionBarSize"
         android:orientation="vertical">
-        <android.support.v7.widget.RecyclerView
+
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_filter"
             android:layout_width="match_parent"
             android:layout_height="@dimen/msv_filter_rv_height"
@@ -81,12 +82,12 @@
             android:backgroundTint="#10000000"/>
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_select_filter"
         android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/whitePrimary"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:visibility="gone"/>
 </FrameLayout>

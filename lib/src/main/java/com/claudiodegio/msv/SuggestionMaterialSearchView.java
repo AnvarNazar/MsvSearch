@@ -2,12 +2,13 @@ package com.claudiodegio.msv;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.Filterable;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.claudiodegio.msv.adapter.SearchSuggestRvAdapter;
 import com.claudiodegio.msv.recycleview.RecyclerItemClickListener;
@@ -40,7 +41,7 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
 
 
     private void initView(){
-        mRvSuggestion = (RecyclerView) findViewById(R.id.rv_suggestions);
+        mRvSuggestion = findViewById(R.id.rv_suggestions);
         mVOverlay = findViewById(R.id.v_overlay);
         mVOverlay.setOnClickListener(this);
         mRvSuggestion.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), this));

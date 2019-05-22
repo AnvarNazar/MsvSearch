@@ -1,7 +1,6 @@
 package com.claudiodegio.msv.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.claudiodegio.msv.R;
 
@@ -110,7 +110,7 @@ public class SearchSuggestRvAdapter extends RecyclerView.Adapter<SearchSuggestRv
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(R.id.suggestion_text);
+            mTextView = itemView.findViewById(R.id.suggestion_text);
         }
     }
 

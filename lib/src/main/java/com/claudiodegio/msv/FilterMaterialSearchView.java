@@ -4,9 +4,6 @@ package com.claudiodegio.msv;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Parcelable;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -14,6 +11,10 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Filterable;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.claudiodegio.msv.adapter.FilterRvAdapter;
 import com.claudiodegio.msv.adapter.SelectFilterRvAdapter;
@@ -74,9 +75,9 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
     }
 
     private void initView(){
-        mRvFilter = (RecyclerView) findViewById(R.id.rv_filter);
-        mRvSelectFilter = (RecyclerView) findViewById(R.id.rv_select_filter);
-        mTvNoFilter = (TextView)  findViewById(R.id.tv_no_filter);
+        mRvFilter = findViewById(R.id.rv_filter);
+        mRvSelectFilter = findViewById(R.id.rv_select_filter);
+        mTvNoFilter = findViewById(R.id.tv_no_filter);
 
         mSelectFilterRvAdapter = new SelectFilterRvAdapter(getContext(), isContainFilter);
         mRvSelectFilter.setHasFixedSize(false);
@@ -200,7 +201,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
             }
 
             if (mOnFilterViewListener != null) {
-                mOnFilterViewListener.onFilterRemoved((Filter) filter);
+                mOnFilterViewListener.onFilterRemoved(filter);
             }
         }
 
