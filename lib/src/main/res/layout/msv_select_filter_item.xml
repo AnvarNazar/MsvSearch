@@ -2,35 +2,36 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="@dimen/msv_select_filter_my_filter_height"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
-    android:layout_height="@dimen/msv_select_filter_my_filter_height"
     android:focusable="true">
 
     <ImageView
         android:id="@+id/iv_icon"
-        android:layout_marginLeft="@dimen/msv_select_filter_left_margin"
         android:layout_width="@dimen/msv_select_filter_icon_size"
         android:layout_height="@dimen/msv_select_filter_icon_size"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="@dimen/msv_select_filter_left_margin"
+        android:layout_marginLeft="@dimen/msv_select_filter_left_margin"
         android:scaleType="center" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civ_icon"
-        android:layout_marginLeft="@dimen/msv_select_filter_left_margin"
         android:layout_width="@dimen/msv_select_filter_icon_size"
         android:layout_height="@dimen/msv_select_filter_icon_size"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="@dimen/msv_select_filter_left_margin" />
+        android:layout_marginStart="@dimen/msv_select_filter_left_margin"
+        android:layout_marginLeft="@dimen/msv_select_filter_left_margin" />
 
     <TextView
         android:id="@+id/tv_name"
-        android:layout_gravity="center_vertical"
+        style="@style/MSV_SelectFilterTextFilterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/msv_select_filter_text_left_margin"
         android:layout_marginLeft="@dimen/msv_select_filter_text_left_margin"
-        style="@style/MSV_SelectFilterTextFilterName"
-        tools:text="Famila"/>
+        tools:text="Famila" />
 
 </FrameLayout>
