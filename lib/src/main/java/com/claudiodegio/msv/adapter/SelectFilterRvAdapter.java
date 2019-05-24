@@ -56,6 +56,7 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
         return mListFiltered.get(position);
     }
 
+    @NonNull
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
@@ -72,6 +73,10 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
                 view = mInflater.inflate(R.layout.msv_select_filter_item, parent, false);
                 holder = new ItemViewHolder(view);
                 break;
+
+            default:
+                view = mInflater.inflate(R.layout.msv_select_filter_item, parent, false);
+                holder = new ItemViewHolder(view);
         }
 
         return holder;
